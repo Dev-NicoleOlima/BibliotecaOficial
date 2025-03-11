@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "gemstone";
+    src: url(./assets/gemstone/Gemstone.ttf);
+}
+
+@font-face {
+    font-family: "dripping";
+    src: url(./assets/a_dripping_marker/adrip1.ttf);
+}
+
+@font-face {
+  font-family: "caviar";
+  src: url(./assets/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: "don";
+  src: url(./assets/don_graffiti/DonGraffiti.otf)
+}
+/* história e todos os funtos */
+:root{
+  --vinho: #850505;
+  --vinhoescuro: #5c0101;
+  --vinhotransparente:#a50000d0;
+  --bege: #fff0d1;
+  --begegradiente: #fff0d1c0;
+  --letrasGrandes: #b01010;
+  --fundo: #f76f6f;
+  
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: var(--bege);
+  }
+
+  
+  .section {
+    padding: 80px 20px;
+    min-height: 100vh;
+  }/*# sourceMappingURL=style.css.map */
+
+
+.header {
+  background-color: var(--vinho);
+  color: var(--bege);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garantir que o header fique no topo, mas abaixo do menu */
+  height: 80px; /* Define a altura fixa do header */
+}
+
+.title {
+font-family: "dripping";
+  font-size: 45px;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}  
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.side-menu {
+  width: 300px;
+  background:var(--vinhoescuro);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fora da tela por padrão */
+  transition: 0.4s;
+  z-index: 1500; /* Garantir que fique acima do header */
+  box-shadow: -2px 0 5px --bege;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  width: 280px;
+  color: var(--bege);
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.side-menu ul li a:hover {
+  background: var(--fundo);
+  width: 270px;
+}
+/* Botão de fechar no menu */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--bege);
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+/* Contêiner geral */
+.container {
+            display: flex; /* Ativa o layout flexbox */
+            align-items: center; /* Alinha verticalmente ao centro */
+            justify-content: space-between; /* Espaço entre as colunas */
+            gap: 20px; /* Espaço entre os itens */
+            max-width: 1200px; /* Define uma largura máxima */
+            margin: 0 auto; /* Centraliza o contêiner na página */
+            padding: 20px; /* Espaço interno opcional */
+        }
+        /* Texto */
+        .text {
+            width: 50%; /* Define a largura da coluna de texto */
+            font-size: 2px; /* Tamanho do texto */
+            line-height: 1.6; /* Espaçamento entre linhas */
+            color: #333; /* Cor do texto */
+        }
+        /* Imagem reexpansiva */
+        .image {
+            width: 50%; /* Define a largura da coluna de imagem */
+            height: auto; /* Mantém a proporção */
+            max-width: 100%; /* Garante que não ultrapasse o tamanho original */
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Empilha os itens verticalmente em telas menores */
+                align-items: flex-start; /* Alinha à esquerda */
+            }
+
+            .image, .text {
+                width: 100%; /* Colunas ocupam 100% da largura em telas menores */
+            }
+        }
+/* ENVOLVIDOS */
+.envolvidos-item{
+    background:var(--bege);
+    padding: 12px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    width: 260px; /* Largura fixa para as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #333;
+    box-shadow: 0 6px 10px var(--vinho);
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(15deg) translateY(20px); /* Inicialmente fora da posição */
+   opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  .envolvidos-item h5 {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  .envolvidos-item h6 {
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  
+  .envolvidos-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  /* pessoas envolvidas */
+  .envolvidos-item:hover {
+    transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+    box-shadow: 0 2px 10px var(--vinho);
+  }
+  /
+ 
+  /* Ajusta o tamanho do contêiner do slider */
+.swiper-container {
+  width: 100%auto;
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+/* Define o tamanho e o alinhamento das imagens */
+.envolvidos-item img {
+  width: 120px;
+  height: 180px;
+  border-radius: 2px;
+}
+/* ensinoMedio */
+.ensinoMedio-item{
+    background:var(--bege);
+    padding: 12px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    width: 260px; /* Largura fixa para as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #333;
+    box-shadow: 0 6px 10px var(--vinho);
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(15deg) translateY(20px); /* Inicialmente fora da posição */
+   opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  
+  
+  .ensinoMedio-item h6 {
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  
+  .ensinoMedio-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  /* pessoas envolvidas */
+  .ensinoMedio-item:hover {
+    transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+    box-shadow: 0 2px 10px var(--vinho);
+  }
+  /
+ 
+  /* Ajusta o tamanho do contêiner do slider */
+.swiper-container {
+  width: 100%auto;
+  max-width: 80px;
+  margin: 0 auto;
+}
+/* Define o tamanho e o alinhamento das imagens */
+.ensinoMedio-item img {
+  width: 200px;
+  height: 180px;
+  border-radius: 2px;
+}
+h5 {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+
+
+    h2{
+        color: var(--letrasGrandes);
+        display: flex;
+        justify-content: center;
+        font-family: "don";
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+.subtitle{
+    color: var(--bege);
+}
+  h3{
+      color: var(--fundo);
+      align-content: flex-start;
+      justify-content: center;
+      font-family: "don";
+      font-size: 40px;
+      letter-spacing: 2px;
+  }
+
+.footer {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+    </style>
+</head>
+<body>
+    <!-- Header Fixo -->
+  <header class="header">
+    <img class="logo" src="" alt="">
+    <h3 class="subtitle">Biblioteca Sônia Turri</h3>
+    <nav class="menu-icon" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/1000/svg" width="50" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </nav>
+  </header>
+    <!-- Menu -->
+    <aside class="side-menu" id="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">✖</button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="calendarios.html">Calendários</a></li>
+          <li><a href="clubes.html">Clubes e Oficinas</a></li>
+          <li><a href="Emprestimo2.html">Empréstimo</a></li>
+          <li><a href="recomendacoesLivros.html">Recomendações</a></li>
+          <li><a href="ListaLiteraria.html">Lista Literária</a></li>
+          <li><a href="sobreNos.html">Sobre nós</a></li>
+        </ul>
+      </aside>
+      <!-- Recomendações -->
+  <section id="envolvidos" class="section envolvidos">
+    <h2>Recomendações</h2>
+        <div class="container">
+          <div class="text">
+              <h4>As recomendações apresentadas aqui são de professores,
+                alunos e funcionários da escola (Sesi-123).
+               <p>Ao final também possui recomendações
+                 de livros pedidos nos vestibulares.</p></h4>
+          </div>
+          <img src="imagens/imagensLivros/ExplicacaoDosIcones.jpg" alt="Imagem Responsiva" class="image">
+
+      </div>
+    <h3>Recomendações - Funcionários</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- QuartoDoDespejo -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/QuartoDoDespejo.jpg"  alt="QuartoDoDespejo">
+              <h5>Quarto do despejo <div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>Quarto de Despejo: Diário de uma Favelada é um livro autobiográfico de Carolina Maria de Jesus publicado em 1960, onde a autora relata sua vivência como mãe, moradora da favela e catadora de papel. </h6>
+            </div>
+        </div>
+        <!-- TartarugasAteLaEmbaixo  -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/TartarugasAteLaEmbaixo.jpg"  alt="TartarugasAteLaEmbaixo">
+            <h5>Tartarugas até lá embaixo <div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>Aza Holmes, uma jovem de 16 anos com TOC, busca um bilionário desaparecido para ganhar uma grande recompensa, enfrentando seus próprios desafios.
+            </h6>
+            <span>John green (823)</span>
+          </div>
+        </div>       
+        <!-- MulheresDeMachado -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/MulheresDeMachado.jpg"alt="MulheresDeMachado">
+              <h5>Mulheres de machado<div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>A coletânea de contos de Machado de Assis retrata mulheres como protagonistas, mostrando sua evolução desde a juventude até a maturidade.</h6>
+              <span>Machado de Assis( )</span>
+            </div>
+        </div>
+        <!-- TrêsRatosCegosEOutrosContos -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/TrêsRatosCegosEOutrosContos.jpg"alt="TrêsRatosCegosEOutrosContos">
+            <h5>Três ratos cegos e outros contos<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>Uma nevasca isola um grupo com um assassino psicótico, enquanto Hercule Poirot tenta salvar uma criança sequestrada, Miss Marple protege herdeiros e Mr. Harley Quin persegue um assassino.</h6>
+            <span>Agatha Christie (823)</span>
+          </div>
+        </div>
+        <!-- OlhosD'Agua -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/OlhosD'Agua.jpg"  alt="OlhosD'Agua">
+            <h5>-Olhos d'água <div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>A coletânea de contos aborda temas como violência, fome, desigualdade social, exploração, preconceito racial, de classe e de gênero, com foco na existência da mulher negra na sociedade brasileira.</h6>
+            <span>Conceição Evaristo (869.9301)</span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>-----<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>----</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>-----<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>----</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>-----<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>----</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>-----<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>----</h6>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recomendações de Alunos do Ensino Fundamental 1 -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Recomendações - Fundamental 1</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- DiarioDePilarNoEgito -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/DiarioDePilarNoEgito.jpg"  alt="DiarioDePilarNoEgito">
+              <h5>- Diario De Pilar No Egito <div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>Pilar, Breno e o gato Samba viajam ao Egito numa rede mágica, onde ajudam Tutancâmon, jovem faraó enterrado vivo, a recuperar seu trono.</h6>
+              <span>Flávia Lins e Silva
+                <p>Letra * (028.5i)</p>
+              </span>
+            </div>
+        </div>
+        <!-- OBlackPowerDeAkin -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/OBlackPowerDeAkin.jpg"  alt="OBlackPowerDeAkin">
+            <h5>O black power de akin<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>É um livro  que conta a história de Akin, um menino negro de 12 anos que se envergonha do seu cabelo black power.</h6>
+            <span>Kiusam de Oliveira
+              <p>Letra O (028.5i)</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Recomendações de Alunos do Ensino Fundamental 2 -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Recomendações - Fundamental 2</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*</h5>
+            <h6>*</h6>
+            <span*</span>
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!-- Recomendações de Alunos do Ensino Médio -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Recomendações - Médio</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- JogosVorazes -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/JogosVorazes.jpg"  alt="JogosVorazes">
+              <h5>-Jogos Vorazes<div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>Uma das formas com que demonstra seu poder sobre o resto do carente país é com Jogos Vorazes, uma competição anual transmitida ao vivo pela televisão, em que um garoto e uma garota de doze a dezoito anos de cada distrito são selecionados e obrigados a lutar até a morte!</h6>
+              <span>Suzanne Collins ()</span>
+            </div>
+        </div>
+        <!-- BibliotecaDaMeiaNoite -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/BibliotecaDaMeiaNoite.jpg"  alt="BibliotecaDaMeiaNoite">
+              <h5>-Biblioteca Da Meia Noite <div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>O livro conta a história de Nora Seed, uma mulher deprimida que reflete sobre escolhas passadas e busca sentido em meio a arrependimentos e vontade de desistir de tudo.</h6>
+              <span>Matt Haig()</span>
+            </div>
+        </div>
+        <!-- RadioSilencio -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/RadioSilencio.jpg"alt="RadioSilencio">
+            <h5>Rádio Silêncio<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>Rádio Silêncio explora identidade, pressão, diversidade e liberdade de escolha. 
+              Com uma narrativa comovente, a autora retrata adolescentes de forma autêntica e impactante.</h6>
+            <span>Alice Oseman</span>
+          </div>
+        </div>
+        <!-- ASelecao -->
+      <div class="swiper-slide">
+        <div class="envolvidos-item">
+          <img src="imagens/imagensLivros/ASelecao.jpg"alt="ASelecao">
+          <h5>A Seleção <div class="book-title">(✔️ Disponível)</div></h5>
+          <h6>America Singer, uma garota da casta Cinco em Illéa, inscreve-se na Seleção para agradar sua mãe, sem imaginar que seria escolhida para mudar seu destino.</h6>
+          <span>Kiera Cass
+            <p>Letra C (028.5j)</p>
+          </span>
+        </div>
+      </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- segunda fileira -->
+     <h2> </h2>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- JogosVorazes -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/JogosVorazes.jpg"  alt="JogosVorazes">
+              <h5><div class="book-title">(❌ Indisponível)</div></h5>
+              <h6></h6>
+              <span></span>
+            </div>
+        </div>
+        <!-- APrincesaSalvaASiMesmaNesteLivros -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/APrincesaSalvaASiMesmaNesteLivros.jpg"alt="APrincesaSalvaASiMesmaNesteLivros">
+              <h5>A princesa salva a si mesma neste livro <div class="book-title">(❌ Indisponível)</div></h5>
+              <h6>A obra aborda amor, perda, redenção e empoderamento, unindo contos de fada à realidade feminina moderna em quatro partes: "A princesa", "A donzela", "A rainha" e "Você".</h6>
+              <span>Amanda Lovelace</span>
+            </div>
+        </div>
+        <!-- RadioSilencio -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/RadioSilencio.jpg"alt="RadioSilencio">
+            <h5>Rádio Silêncio<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>Rádio Silêncio explora identidade, pressão, diversidade e liberdade de escolha. 
+              Com uma narrativa comovente, a autora retrata adolescentes de forma autêntica e impactante.</h6>
+            <span>Alice Oseman</span>
+          </div>
+        </div>
+        <!-- ASelecao -->
+      <div class="swiper-slide">
+        <div class="envolvidos-item">
+          <img src="imagens/imagensLivros/ASelecao.jpg"alt="ASelecao">
+          <h5>A Seleção <div class="book-title">(✔️ Disponível)</div></h5>
+          <h6>America Singer, uma garota da casta Cinco em Illéa, inscreve-se na Seleção para agradar sua mãe, sem imaginar que seria escolhida para mudar seu destino.</h6>
+          <span>Kiera Cass
+            <p>Letra C (028.5j)</p>
+          </span>
+        </div>
+      </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(❌ Indisponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+        <!-- Arrumar -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensLivros/-.jpg"  alt="-">
+            <h5>*<div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>*</h6>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Recomendações Vestibulares -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Recomendações Vestibulares</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- MariliaDeDirceo -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/capa-livro-marilia-dirceu.jpg"  alt="JogosVorazes">
+              <h5>-Marília de Dirceu <div class="book-title">(❌ Indisponível)</div></h5>
+              <h6>"Marília de Dirceu é o livro mais famoso de Tomás Antônio Gonzaga e fala do amor idealizado entre Dirceu e Marília. Assim, o apaixonado poeta declara seu amor à jovem Maria Doroteia. Mas também demonstra sua angústia por estar encarcerado, uma dor que encontra alívio somente na certeza do afeto da mulher amada."</h6>
+            </div>
+        </div>
+        <!-- OlhosD'Agua -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/OlhosD'Agua.jpg"  alt="OlhosD'Agua">
+            <h5>-Olhos d'água <div class="book-title">(✔️ Disponível)</div></h5>
+            <h6>A coletânea de contos aborda temas como violência, fome, desigualdade social, exploração, preconceito racial, de classe e de gênero, com foco na existência da mulher negra na sociedade brasileira.</h6>
+            <span>Conceição Evaristo (869.9301)</span>
+          </div>
+        </div>
+        <!-- Vestibulares -->
+        <div class="swiper-slide">
+            <div class="ensinoMedio-item">
+              <img src="imagens/ClubesOficinas/livros-de-vestibular.jpg"  alt="vestibulares">
+              <h5>Livros Para Os Vestibulares</h5>
+              <p class="card-text">Visite o site Brasil escola com uma lista dos livros recomendados para cada vestibular.</p>
+            <a href="https://vestibular.brasilescola.uol.com.br/livros-vestibulares" class="btn btn-primary">Leia mais</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer mt-4">
+        <div class="container">
+            <p>&copy; 2024 Biblioteca Sesi Sorocaba - Nick Chirai</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Site de Notícias carregado com sucesso!');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

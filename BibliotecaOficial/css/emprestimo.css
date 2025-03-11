@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "gemstone";
+    src: url(./assets/gemstone/Gemstone.ttf);
+}
+
+@font-face {
+    font-family: "dripping";
+    src: url(./assets/a_dripping_marker/adrip1.ttf);
+}
+
+@font-face {
+  font-family: "caviar";
+  src: url(./assets/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: "don";
+  src: url(./assets/don_graffiti/DonGraffiti.otf)
+}
+/* história e todos os funtos */
+:root{
+  --vinho: #850505; 
+  --vinhoescuro: #5c0101;
+  --vinhotransparente:#a50000d0;
+  --bege: #fff0d1;
+  --begegradiente: #fff0d1c0;
+  --letrasGrandes: #b01010;
+  --fundo: #f76f6f;
+  
+}
+/* H's */
+h2{
+    color: var(--letrasGrandes);
+        display: flex;
+        justify-content: center;
+        font-family: "don";
+        font-size: 45px;
+        letter-spacing: 2px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: var(--bege);
+  }
+
+  
+  .section {
+    padding: 80px 20px;
+    min-height: 100vh;
+  }/*# sourceMappingURL=style.css.map */
+
+
+.header {
+  background-color: var(--vinho);
+  color: var(--bege);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garantir que o header fique no topo, mas abaixo do menu */
+  height: 80px; /* Define a altura fixa do header */
+}
+
+.title {
+font-family: "dripping";
+  font-size: 45px;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}  
+
+/* MENU */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.side-menu {
+  width: 300px;
+  background: var(--vinhoescuro);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fora da tela por padrão */
+  transition: 0.4s;
+  z-index: 1500; /* Garantir que fique acima do header */
+  box-shadow: -2px 0 5px --bege;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: var(--bege);
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.side-menu ul li a:hover {
+  background: var(--fundo);
+}
+
+/* Botão de fechar no menu */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--bege);
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+/* FIM DO MENU */
+
+  /* EMPRÉSTIMO */
+  .registroEMP {
+    background:var(--bege); /* fundo da caixa de registroEMP*/
+    padding: 50px 20px;
+  }
+  .registroEMP-form {
+    max-width: 600px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    background: var(--vinho);
+    padding: 20px; /*Distância da borda da caixa*/
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  /* bloco de informação do nome, código,etc */
+  .registroEMP-form label {
+    font-size: 18px;
+    font-weight: bold;
+    height: 1px;
+    color: var(--bege);
+  }
+  /* borda dos blocos de nome, código,etc */
+  .registroEMP-form input,
+  .registroEMP-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  /* botão de enviar a o empréstimo */
+  .btn-enviar {
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .btn-enviar:hover {
+    background: linear-gradient(135deg, #333, #111);
+    transform: scale(1.05);
+  }
+
+  .footer {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+

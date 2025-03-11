@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "gemstone";
+    src: url(./assets/gemstone/Gemstone.ttf);
+}
+
+@font-face {
+    font-family: "dripping";
+    src: url(./assets/a_dripping_marker/adrip1.ttf);
+}
+
+@font-face {
+  font-family: "caviar";
+  src: url(./assets/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: "don";
+  src: url(./assets/don_graffiti/DonGraffiti.otf)
+}
+/* história e todos os funtos */
+:root{
+  --vinho: #850505;
+  --vinhoescuro: #5c0101;
+  --vinhotransparente:#a50000d0;
+  --bege: #fff0d1;
+  --begegradiente: #fff0d1c0;
+  --letrasGrandes: #b01010;
+  --fundo: #f76f6f;
+  
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: var(--bege);
+  }
+
+  
+  .section {
+    padding: 80px 20px;
+    min-height: 100vh;
+  }/*# sourceMappingURL=style.css.map */
+
+
+.header {
+  background-color: var(--vinho);
+  color: var(--bege);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garantir que o header fique no topo, mas abaixo do menu */
+  height: 80px; /* Define a altura fixa do header */
+}
+
+.title {
+font-family: "dripping";
+  font-size: 45px;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}  
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.side-menu {
+  width: 300px;
+  background:var(--vinhoescuro);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fora da tela por padrão */
+  transition: 0.4s;
+  z-index: 1500; /* Garantir que fique acima do header */
+  box-shadow: -2px 0 5px --bege;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  width: 280px;
+  color: var(--bege);
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.side-menu ul li a:hover {
+  background: var(--fundo);
+  width: 270px;
+}
+/* Botão de fechar no menu */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--bege);
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+
+/* ENVOLVIDOS */
+.envolvidos-item{
+    background:var(--bege);
+    padding: 12px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    width: 260px; /* Largura fixa para as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #333;
+    box-shadow: 0 6px 10px var(--vinho);
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(15deg) translateY(20px); /* Inicialmente fora da posição */
+   opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  
+  .envolvidos-item h5 {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  .envolvidos-item h6 {
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  
+  .envolvidos-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  /* pessoas envolvidas */
+  .envolvidos-item:hover {
+    transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+    box-shadow: 0 2px 10px var(--vinho);
+  }
+  /
+ 
+  /* Ajusta o tamanho do contêiner do slider */
+.swiper-container {
+  width: 100%auto;
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+/* Define o tamanho e o alinhamento das imagens */
+.envolvidos-item img {
+  width: 120px;
+  height: 180px;
+  border-radius: 2px;
+}
+/* ensinoMedio */
+.ensinoMedio-item{
+    background:var(--bege);
+    padding: 12px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    width: 260px; /* Largura fixa para as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #333;
+    box-shadow: 0 6px 10px var(--vinho);
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(15deg) translateY(20px); /* Inicialmente fora da posição */
+   opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  
+  
+  .ensinoMedio-item h6 {
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+  
+  .ensinoMedio-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  /* pessoas envolvidas */
+  .ensinoMedio-item:hover {
+    transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+    box-shadow: 0 2px 10px var(--vinho);
+  }
+  /
+ 
+  /* Ajusta o tamanho do contêiner do slider */
+.swiper-container {
+  width: 100%auto;
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+/* Define o tamanho e o alinhamento das imagens */
+.ensinoMedio-item img {
+  width: 200px;
+  height: 180px;
+  border-radius: 2px;
+}
+h5 {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.880);
+    margin-bottom: 1px;
+  }
+
+
+    h2{
+        color: var(--letrasGrandes);
+        display: flex;
+        justify-content: center;
+        font-family: "don";
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+.subtitle{
+    color: var(--bege);
+}
+  h3{
+      color: var(--fundo);
+      align-content: flex-start;
+      justify-content: center;
+      font-family: "don";
+      font-size: 40px;
+      letter-spacing: 2px;
+  }
+
+.footer {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+    </style>
+</head>
+<body>
+    <!-- Header Fixo -->
+  <header class="header">
+    <img class="logo" src="" alt="">
+    <h3 class="subtitle">Biblioteca Sônia Turri</h3>
+    <nav class="menu-icon" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/1000/svg" width="50" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </nav>
+  </header>
+    <!-- Menu -->
+    <aside class="side-menu" id="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">✖</button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="calendarios.html">Calendários</a></li>
+          <li><a href="clubes.html">Clubes</a></li>
+          <li><a href="Emprestimo2.html">Empréstimo</a></li>
+          <li><a href="recomendacoesLivros.html">Recomendações</a></li>
+          <li><a href="ListaLiteraria.html">Lista Literária</a></li>
+          <li><a href="sobreNos.html">Sobre nós</a></li>
+        </ul>
+      </aside>
+      <!-- Listas -->
+  <section id="envolvidos" class="section envolvidos">
+    <h2>Lista Literária</h2>
+    <h5>Aqui estão os livros que são pedidos nas listas de matériais.</h5>
+  <!-- Lista dos Alunos do Ensino Fundamental 1 -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Lista dos Alunos do Ensino Fundamental 1</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- DiarioDePilarNoEgito -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/DiarioDePilarNoEgito.jpg"  alt="DiarioDePilarNoEgito">
+              <h5>- Diario De Pilar No Egito <div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>Uma volta na rede mágica e lá vai a Pilar rumo ao Egito! Com seu insperável amigo Breno e o gato Samba, essa menina aventureira encontra Tutancâmon, o jovem faraó que foi enterrado vivo num sarcófago e precisa de ajuda para recuperar seu trono.</h6>
+              <span>-°ano (--/--/----)</span>
+            </div>
+        </div>
+          <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Lista dos Alunos do Ensino Fundamental 2 -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Lista dos Alunos do Ensino Fundamental 2</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- 1984 -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/1984(EdicaoEmQuadrinhos).jpg"  alt="1984">
+            <h5>-1984 (Em quadrinhos)</h5>
+            <h6>1984 conta a história do angustiado Winston Smith, refém de um mundo feito de opressão absoluta. Em Oceânia, ter uma mente livre é considerado crime gravíssimo.</h6>
+            <span>9°ano (--/--/----)</span>
+          </div>
+      </div>
+      <!-- FelicidadeClandestina -->
+      <div class="swiper-slide">
+        <div class="envolvidos-item">
+          <img src="imagens/imagensLivros/FelicidadeClandestina.jpg"  alt="FelicidadeClandestina">
+          <h5>-Felicidade Clandestina <div class="book-title">(✔️ Disponível)</div></h5>
+          <h6>Felicidade Clandestina é um livro de contos de Clarice Lispector que explora a complexidade da vida cotidiana e a profundidade das emoções humanas</h6>
+          <span>9°ano (--/--/----)</span>
+        </div>
+    </div>
+          <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Lista dos Alunos do Ensino Médio -->
+  <section id="envolvidos" class="section envolvidos">
+    <h3>Lista dos Alunos do Ensino Médio</h3>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- OlhosD'Agua -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensLivros/OlhosD'Agua.jpg"  alt="OlhosD'Agua">
+              <h5>-Olhos d'água <div class="book-title">(✔️ Disponível)</div></h5>
+              <h6>A coletânea de contos aborda temas como violência, fome, desigualdade social, exploração, preconceito racial, de classe e de gênero, com foco na existência da mulher negra na sociedade brasileira.</h6>
+              <span>3°ano EM (03/02/2025)</span>
+            </div>
+        </div>
+        <!-- AlgumaPoesia -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/AlgumaPoesia.jpg"  alt="AlgumaPoesia">
+            <h5>-Alguma Poesia</h5>
+            <h6>"Alguma Poesia" é um livro de poemas curtos e de linguagem simples, contrastando com movimentos literários como o parnasianismo, que valorizava a estrutura clássica.</h6>
+            <span>3°ano EM (30/04/2025)</span>
+          </div>
+        </div>
+        <!-- Niketche -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensLivros/Niketche.jpg"  alt="Niketche">
+            <h5>-Niketche</h5>
+            <h6>Marco da literatura moçambicana, Niketche é uma obra que questiona as tradições e debate, como nunca antes, as condição feminina na sociedade.</h6>
+            <span>3°ano EM (29/08/2025)</span>
+          </div>
+        </div>
+          <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer mt-4">
+        <div class="container">
+            <p>&copy; 2024 Biblioteca Sesi Sorocaba - Nick Chirai</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Site de Notícias carregado com sucesso!');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

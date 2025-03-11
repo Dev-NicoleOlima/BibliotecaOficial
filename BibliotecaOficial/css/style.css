@@ -1,0 +1,563 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "gemstone";
+    src: url(./assets/gemstone/Gemstone.ttf);
+}
+
+@font-face {
+    font-family: "dripping";
+    src: url(./assets/a_dripping_marker/adrip1.ttf);
+}
+
+@font-face {
+  font-family: "caviar";
+  src: url(./assets/caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+  font-family: "don";
+  src: url(./assets/don_graffiti/DonGraffiti.otf)
+}
+/* história e todos os funtos */
+:root{
+  --vinho: #850505;
+  --bege: #fff0d1;
+  --letrasGrandes: #b01010;
+  --fundo: #f76f6f;
+  
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  
+  .section {
+    padding: 80px 20px;
+    min-height: 100vh;
+  }/*# sourceMappingURL=style.css.map */
+
+
+.header {
+  background-color: var(--vinho);
+  color: var(--bege);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garantir que o header fique no topo, mas abaixo do menu */
+  height: 80px; /* Define a altura fixa do header */
+}
+
+.title {
+font-family: "dripping";
+  font-size: 45px;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}  
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.side-menu {
+  width: 300px;
+  background: #5c0101;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fora da tela por padrão */
+  transition: 0.4s;
+  z-index: 1500; /* Garantir que fique acima do header */
+  box-shadow: -2px 0 5px --bege;
+  padding-top: 20px;
+  color: white;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.side-menu ul li a:hover {
+  background: var(--bege);
+}
+
+/* Botão de fechar no menu */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.news-card {
+  margin-bottom: 8px;
+}
+
+.news-category {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+/* Define a altura do slider */
+#customSlider .carousel-inner {
+  height: 500px; /* Define a altura do slider */
+}
+
+#customSlider img {
+  object-fit: cover; /* Ajusta as imagens para cobrir o espaço disponível */
+  height: 100%; /* Faz a imagem preencher todo o espaço */
+}
+
+/* Estilo das legendas */
+#customSlider .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+#customSlider .carousel-caption h5 {
+  font-size: 1.5rem;
+  color: #ffffff; /* Cor do texto */
+  margin-bottom: 10px;
+}
+
+#customSlider .carousel-caption p {
+  color: #cccccc; /* Cor do texto secundário */
+}
+
+/* Indicadores (bolinhas) */
+#customSlider .carousel-indicators button {
+  background-color: #ffffff; /* Cor das bolinhas */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+#customSlider .carousel-indicators .active {
+  background-color: #007bff; /* Cor das bolinhas ativas */
+}
+
+/* Botões de controle (setas) */
+#customSlider .carousel-control-prev-icon,
+#customSlider .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para as setas */
+  border-radius: 50%;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  #customSlider .carousel-caption {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+
+  #customSlider img {
+      object-fit: contain; /* Ajusta para que as imagens não sejam cortadas em telas menores */
+  }
+}
+
+
+
+
+/* Seção Hero */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh); /* Reduz a altura total da seção pela altura do header */
+  background: url(./src/WhatsApp\ Image\ 2024-11-18\ at\ 10.38.37.jpeg) no-repeat center center/cover; /* Imagem de fundo */
+  filter: grayscale(40%); /* Efeito acinzentado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* primeiro fundo */
+/* Sobreposição para o texto */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bege); /*cor do  primeiro Fundo */
+  color: var(--letrasGrandes);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* Adiciona espaço nas bordas em telas menores */
+}
+
+.hero-overlay h1 {
+  font-family: 'gemstone';
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-family: 'caviar';
+  font-size: 2rem;
+  line-height: 1;
+  max-width: 600px;
+}
+
+/* Efeito de transição suave ao carregar */
+.hero-section {
+  transform: scale(1.1);
+  animation: fadeInHero 1.5s ease forwards;
+}
+
+@keyframes fadeInHero {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilo geral para todas as legendas */
+.custom-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  color: #fff; /* Texto branco */
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Limita a largura */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  bottom: 20%; /* Ajusta a posição vertical */
+}
+
+/* Estilizando o título */
+.custom-caption h5 {
+  font-size: 1.8rem; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o título em negrito */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona sombra ao texto */
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+/* Estilizando o parágrafo */
+.custom-caption p {
+  font-size: 0.8rem; /* Tamanho da fonte */
+  line-height: 1.5; /* Espaçamento entre linhas */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+}
+
+/* Ajustes para dispositivos menores */
+@media (max-width: 768px) {
+  .custom-caption {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    padding: 10px; /* Reduz o espaçamento interno */
+  }
+}
+
+
+
+/* Estilo geral da seção História */
+.noticiasBiblio {
+  padding: 40px 60px;
+  width: 100%;
+  background: linear-gradient( var(--fundo), #222);
+}
+
+/* Evento da Linha do Tempo */
+.timeline-event {
+  position: relative;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.timeline-event.right {
+  display: flex;
+  justify-content: space-evenly; /* Alinha conteúdo à direita */
+}
+
+.timeline-event.left {
+  display:flex;
+  justify-content: space-evenly; /* Alinha conteúdo à esquerda */
+}
+
+/* Conteúdo do Evento */
+.event-content {
+  background: var(--bege);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 16px 20px rgb(124, 10, 10);
+  width: 40%;
+  text-align: center;
+  z-index: 2; /* Mantém acima */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.event-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+.event-content p {
+  font-size: 16px;
+}
+
+/* Imagem ao lado do conteúdo */
+.event-image {
+  width: 35%; 
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+ /* Efeitos ao passar o mouse */
+ .event-content:hover {
+  transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Seção Frases */
+.relatos, .envolvidos {
+  background: linear-gradient( var(--vinho), #222);
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Evita bugs de animação fora da área visível */
+}
+
+.envolvidos,.noticiasBiblio, .relatos h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.noticiasBiblio h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Estilo do Swiper */
+.swiper-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Caixa da frase */
+.frase-item, .envolvidos-item{
+  background:var(--bege);
+  padding: 20px;
+  height: 230px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px; /* Largura fixa para as caixas */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #333;
+  box-shadow: 0 6px 10px rgb(120, 0, 0);
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(15deg) translateY(20px); /* Inicialmente fora da posição */
+ opacity: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.frase-item, .envolvidos-item p {
+  font-size: 18px;
+  font-style: italic;
+  color: #555;;
+  margin-bottom: 10px;
+}
+
+.frase-item, .envolvidos-item span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+/* Efeito ao aparecer */
+.frase-item.visible {
+  transform: rotateY(0) translateY(0); /* Retorna ao estado normal */
+  opacity: 1; /* Torna visível */
+}
+.envolvidos-item.visible {
+  transform: rotateY(0) translateY(0); /* Retorna ao estado normal */
+  opacity: 1; /* Torna visível */
+}
+
+/* Hover para mais destaque(pra ampliar */
+.frase-item:hover {
+  transform: scale(1.05) rotateY(0); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+.envolvidos-item:hover {
+  transform: scale(1.05) rotateY(0); /* Ampliar levemente */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+/* cor das relatos */
+h5{
+  color: #000000;
+} */
+/* Botões do Swiper */
+.swiper-button-prev{
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* formato do bloco de relato */
+.quiz-feedback {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: none; /* Oculto até interagir */
+}
+
+/* caixa da mensagem */
+.mensagens {
+  background: linear-gradient( var(--fundo), var(--vinho)); /* fundo da caixa de mensagens*/
+  padding: 50px 20px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--vinho);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* bloco de informação do nome e da opnião */
+.mensagem-form label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+/* borda dos blocos de nome e opnião */
+.mensagem-form input,
+.mensagem-form textarea {
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* botão de enviar a opnião */
+.btn-enviar {
+  padding: 15px;
+  font-size: 18px;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-enviar:hover {
+  background: linear-gradient(135deg, #333, #111);
+  transform: scale(1.05);
+}
+
+
+
+
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.noticiasBiblio, .envolvidos, .relatos, .mensagens{
+    h2{
+        color: var(--bege);
+        display: flex;
+        justify-content: center;
+        font-family: "don";
+        font-size: 45px;
+        letter-spacing: 6px;
+    }
+}
+.noticiasBiblio{
+  h3{
+      color: var(--bege);
+      display: flex;
+      justify-content: center;
+      font-family: "don";
+      font-size: 45px;
+      letter-spacing: 6px;
+  }
+}
+
+
+

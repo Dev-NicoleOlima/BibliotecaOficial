@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Livros</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .book-card {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Loja de Livros</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#books">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="novidades.html">Novidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Bem-vindo à Loja de Livros</h1>
+        <p>Explore nossa coleção de livros incríveis e encontre sua próxima leitura favorita.</p>
+    </header>
+
+    <div class="container my-5" id="books">
+        <h2 class="text-center mb-4">Nossos Livros</h2>
+        <div class="row">
+            <!-- Exemplo de livro -->
+            <div class="col-md-4 book-card">
+                <div class="card">
+                    <img src="images/livros/livro1.jpg" class="card-img-top" alt="Livro 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Aventuras na Floresta</h5>
+                        <p class="card-text">Uma história emocionante para todas as idades.</p>
+                        <p class="text-muted">R$ 39,90</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 book-card">
+                <div class="card">
+                    <img src="images/livros/livro2.jpg" class="card-img-top" alt="Livro 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mistério no Castelo</h5>
+                        <p class="card-text">Descubra os segredos de um antigo castelo.</p>
+                        <p class="text-muted">R$ 49,90</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 book-card">
+                <div class="card">
+                    <img src="images/livros/livro3.jpg" class="card-img-top" alt="Livro 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Romance ao Luar</h5>
+                        <p class="card-text">Uma história apaixonante sob a luz do luar.</p>
+                        <p class="text-muted">R$ 45,90</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-light py-5" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-4">Contato</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Seu nome">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Loja de Livros. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

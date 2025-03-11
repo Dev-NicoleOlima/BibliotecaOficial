@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloindex.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Header Fixo -->
+  <header class="header">
+    <img class="logo" src="" alt="">
+    <h3 class="subtitle">Biblioteca Sônia Turri</h3>
+    <nav class="menu-icon" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/1000/svg" width="50" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </nav>
+  </header>
+
+  <!-- Menu -->
+  <aside class="side-menu" id="side-menu">
+    <button class="close-btn" onclick="toggleMenu()">✖</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="acervo.html">Acervo</a></li>
+      <li><a href="calendarios.html">Calendários</a></li>
+      <li><a href="clubes.html">Clubes e Oficinas</a></li>
+      <li><a href="Emprestimo2.html">Empréstimo</a></li>
+      <li><a href="recomendacoesLivros.html">Recomendações</a></li>
+      <li><a href="ListaLiteraria.html">Lista Literária</a></li>
+      <li><a href="sobreNos.html">Sobre nós</a></li>
+    </ul>
+  </aside>
+
+<!-- carrosel -->
+ <section id="carrosel">
+  <div id="customSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="4"></button>
+      <button type="button" data-bs-target="#customSlider" data-bs-slide-to="5"></button>
+    
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imagens/cabeçalhos/biblioteca3.jpg" class="d-block w-100" alt="Slide 0">
+        <div class="carousel-caption">
+          <h5>Primeiro Slide</h5>
+          <p>Descrição do primeiro slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/cabeçalhos/biblioteca4.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption">
+          <h5>Segundo Slide</h5>
+          <p>Descrição do segundo slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/cabeçalhos/biblioteca5.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption">
+          <h5>Terceiro Slide</h5>
+          <p>Descrição do terceiro slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/cabeçalhos/biblioteca6.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption">
+          <h5>Quarto Slide</h5>
+          <p>Descrição do quarto slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/cabeçalhos/influencerDaCultura.jpg" class="d-block w-100" alt="Slide 4">
+        <div class="carousel-caption">
+          <h5>Influencer's da Cultura</h5>
+          <p>Os Influencer's da Cultura servem na ajuda e contribuição na área cultural da escola.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#customSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#customSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+ </section>
+    
+
+    <!-- Main Content -->
+    <section id="noticiasBiblio" class="section noticiasBiblio">
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Latest News -->
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Notícias e Novidades para 2025</h2>
+    
+                    <!-- News Card -->
+                    <div class="card news-card">
+                        <img src="imagens/noticias/fest.jpg" class="card-img-top" alt="Fest">
+                        <div class="card-body">
+                            <h5 class="card-title">Inscrições para o FestVoz e o FestDance a partir de 27 de Janeiro</h5>
+                            <p class="news-category">Categoria: Arte,Cultura e Eventos</p>
+                            <p class="card-text">Este é um resumo da notícia mais recente. Clique para ler mais!</p>
+                            <a href="#" class="btn btn-primary">Leia mais</a>
+                        </div>
+                    </div>
+    
+                    <!-- Additional News Cards -->
+                    <div class="card news-card">
+                        <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Notícia">
+                        <div class="card-body">
+                            <h5 class="card-title">Outra Notícia Importante</h5>
+                            <p class="news-category">Categoria: Esportes</p>
+                            <p class="card-text">Resumo da notícia esportiva. Clique para mais detalhes.</p>
+                            <a href="#" class="btn btn-primary">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div id="categorias" class="col-lg-4">
+                  <h3 class="mb-4">Categorias</h3>
+                  <ul class="list-group">
+                      <li class="list-group-item"><a href="#">Arte</a></li>
+                      <li class="list-group-item"><a href="#">Cultura</a></li>
+                      <li class="list-group-item"><a href="#">Clubes</a></li>
+                      <li class="list-group-item"><a href="#">Eventos</a></li>
+                      <li class="list-group-item"><a href="#">Livros</a></li>
+                  </ul>
+                  <h3 class="mb-4">Notícias</h3>
+                  <h3>Populares</h3>
+                  <div class="list-group">
+                    <li class="list-group-item"><a href="#">...</a></li>
+                    <li class="list-group-item"><a href="#">...</a></li>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </section>
+     
+    
+    <!-- Seção 2: Pessoas Envolvidas -->
+  <section id="envolvidos" class="section envolvidos">
+    <h2>Pessoas Envolvidas</h2>
+    <div class="swiper-container">
+      <!-- div de container que rolam -->
+      <div class="swiper-wrapper">
+        <!-- Paulo -->
+        <div class="swiper-slide">
+            <div class="envolvidos-item">
+              <img src="imagens/imagensPessoas/paulo.jpg"  alt="Paulo">
+              <h5>- Paulo</h5>
+              <span>Bibliotecário</span>
+              </div>
+        </div>
+        <!-- Sônia -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="Sônia">
+            <h5>- Sônia </h5>
+            <span>Coordenadora</span>
+            </div>
+        </div>
+        <!-- Suzete -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="Suzete">
+            <h5>- Suzete...</h5>
+            <span>Coordenadora</span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="" alt="-">
+            <h5>- </h5>
+            <span>Aluno (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="" alt="-">
+            <h5>-</h5>
+            <span>Aluna (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="" alt="-">
+            <h5>-</h5>
+            <span>Aluna (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Marina -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensPessoas/usuarioSemFoto.jpg" alt="Marina">
+            <h5>- Marina...</h5>
+            <span>Aluna 2-EM A (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="" alt="-">
+            <h5>-</h5>
+            <span>Aluna (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Heloisa -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="Heloisa">
+            <h5>- Heloisa...</h5>
+            <span>Aluna 2-EM A (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Bea -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="Bea">
+            <h5>- Bea...</h5>
+            <span>Aluna 2-EM (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Isadora -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="Isadora">
+            <h5>- Isadora...</h5>
+            <span>Aluna 2-EM (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Chirai -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/Chirai.jpg" alt="Chirai">
+            <h5>- Nick B. Chirai...</h5>
+            <span>Alun@ 3-EM E(Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Ana Julia -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagens/imagensPessoas/fotoSemUsuario.jpg" alt="AnaJulia">
+            <h5>- Ana Julia Sanches</h5>
+            <span>Aluna 3-EM E (Influencer da Cultura)</span>
+            </div>
+        </div>
+        <!-- Ligia -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensPessoas/usuarioSemFoto.jpg" alt="Ligia">
+            <h5>- Ligia...</h5>
+            <span>Diretora</span>
+            </div>
+        </div>
+        <!-- IsadoraA -->
+        <div class="swiper-slide">
+          <div class="envolvidos-item">
+            <img src="imagensPessoas/usuarioSemFoto.jpg" alt="IsadoraAssistente">
+            <h5>-  Isadora...</h5>
+            <span>Assistente da Ligia</span>
+            </div>
+        </div>
+
+          <div class="swiper-button-prev"></div>
+
+      </div>
+    </div>
+  </section>
+    <!-- RELATOS -->
+  <section id="relato" class="relato">
+    <h2>Relatos</h2>
+    <!-- Container do Swiper -->
+    <div class="swiper-container">
+      <!-- Wrapper para os slides -->
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"Na biblioteca eu me sinto feliz e reconfortada, as pessoas q auxiliam lá são muito parceiras e me fazem bem, sem contar q lá desde quando comecei a ajudar já aprendi muito, de como lidar melhor com as diferenças de personalidade de cada criança por exemplo e até mesmo acredito q me fez criar mais maturidade e responsabilidade, não tenho do que reclamar, aquele ambiente com toda certeza está sendo uma escola para me tornar agora e futuramente uma melhor cidadã."</p>
+                <span>- Eloise C.</span>
+              </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"Nunca pensei que seria voluntária para alguma coisa, principalmente para a biblioteca da escola, mas sem sombra de dúvidas foi uma das melhores coisas que fiz e que não me arrependo. Nela aprendi muita coisa em relação de estudos, formas de "trabalhar" e organização, mas nela aprendi coisas tão importantes, como me socializar.
+                  A biblioteca passou por muita mudanças nesse ano, aprendemos, melhoramos, corrigimos, nos divertimos e muitas outras coisas. Mas o melhor de tudo, foi as grandes amizades que ela me proporcionou, momentos inesquecíveis, como o FestVoz, ou até ser chamada para outros eventos do Sesi. 
+                  Estar na biblioteca é único, principalmente com as pessoas que estão lá, são momentos que marcaram a minha vida. A biblioteca em si é pensado e planejado para estudos, mas são momentos descontraídos nelas que há torna incrível."</p>
+                <span>- Vitória Friolani</span>
+              </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"De ínicio eu nunca imaginei que passaria tanto tempo em uma biblioteca, antes de me chamarem pra fazer parte do projeto, antes GR(Grupo de Responsabilidade) eu não lia nada de livors, eu não tinha motivações, foi ai que vi uma motivação e também uma pessoa muito importânte me mostrou o lado bom de ler livros, então sou muito grato por isso. 
+                  E o mais importante pra mim se iniciou quando o Paulo chegou, houveram muitas mudanças, tanto na educacionalmente tanto socialmente, lá fiz muitos amigos especiais que me ajudaram muito neste ano, lá na biblioteca trabalhamos e estudamos e fazemos isso muitas vezes nos divertindo e aproveitando cada vivência nova. 
+                  E como agradecimento busco sempre fazer meu melhor para ajudalos assim como eles fizeram por mim, então, sim esse lugar é muito importânte pra mim e por isso recomendo, pois é um ambiente muito bom e mágico."</p>
+                <span>- Nick Chirai</span>
+              </div>
+        </div>
+         <!-- Slide 1 -->
+        <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"É um lugar extremamente acochegante, de toda escola ela é que mais traz a sensação de Paz, o acervo muito rico que não para de aumentar vai desde memórias póstumas até diário de um banana, é o meu lugar preferido da escola."</p>
+                <span>- Murilo Diniz</span>
+              </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"..."</p>
+                <span>- Anônimo</span>
+              </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="relato-item">
+                <p>"..."</p>
+                <span>-Anônimo</span>
+              </div>
+          </div>
+
+          <div class="swiper-slide">
+          <div class="relato-item">
+            <p>"..."</p>
+            <span>-Anônimo</span>
+          </div>
+          </div>
+
+          <div class="swiper-slide">
+          <div class="relato-item">
+            <p>"..."</p>
+            <span>-Anônimo</span>
+          </div>
+          </div>
+
+          <div class="swiper-slide">
+          <div class="relato-item">
+            <p>"..."</p>
+            <span>- Anônimo</span>
+          </div>
+          </div>
+
+          <div class="swiper-slide">
+          <div class="relato-item">
+            <p>"..."</p>
+            <span>-Anônimo</span>
+          </div>        
+          </div>
+          <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mensagens" class="section mensagens">
+    <h2>Deixe sugestões, opniões, esperiências e mensagens</h2>
+    <form class="mensagem-form">
+      <label for="nome">Nome (opcional):</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome">
+      <label for="mensagem">Sua Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem"></textarea>
+      <button type="submit" class="btn-enviar">Enviar mensagem</button>
+    </form>
+  </section>
+
+
+    <!-- Footer -->
+    <footer class="footer mt-4">
+        <div class="container">
+            <p>&copy; 2024 Biblioteca Sesi Sorocaba - Nick Chirai</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Site carregado com sucesso!');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
